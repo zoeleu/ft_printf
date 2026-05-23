@@ -6,7 +6,7 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:46:02 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/18 16:24:20 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/05/23 15:51:33 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ size_t	ptr_handler(va_list *args)
 	void	*ptr;
 
 	ptr = va_arg(*args, void *);
+	if (ptr == 0x0)
+	{
+		ft_putstr("(nil)");
+		return (1);
+	}
 	ft_putstr("0x");
 	ft_putunbr_base((unsigned long)ptr, "0123456789abcdef");
 	return (1);
