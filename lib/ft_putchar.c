@@ -6,13 +6,14 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:51:46 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/18 15:51:50 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/06/01 09:06:36 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+size_t	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }

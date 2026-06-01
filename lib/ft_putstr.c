@@ -6,14 +6,17 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:07:02 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/18 16:07:53 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/06/01 08:44:23 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
-void	ft_putstr(char *str)
+size_t	ft_putstr(char *str)
 {
-	while (*str)
-		write(STDOUT_FILENO, str++, 1);
+	size_t	strlen;
+
+	strlen = ft_strlen(str);
+	return (write(STDOUT_FILENO, str, strlen));
 }

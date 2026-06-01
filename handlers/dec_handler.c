@@ -6,7 +6,7 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:46:02 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/18 16:15:07 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/06/01 08:40:12 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,5 @@ size_t	dec_handler(va_list *args)
 	int	nbr;
 
 	nbr = va_arg(*args, int);
-	ft_putnbr_base(nbr, "0123456789");
-	return (1);
+	return (ft_putnbr_base(nbr, "0123456789"));
 }

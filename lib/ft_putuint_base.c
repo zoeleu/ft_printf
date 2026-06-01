@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_putuint_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/18 16:26:10 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/18 16:37:06 by zleullie         ###   ########.fr       */
+/*   Created: 2026/05/18 15:52:18 by zleullie          #+#    #+#             */
+/*   Updated: 2026/06/01 09:02:42 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <unistd.h>
+#include "libft.h"
 
-int main(void)
+size_t	ft_putuint_base(unsigned int nbr, char *base)
 {
-	ft_printf("Hello world! %d\n This is: %s!!! %p %p %X", 1, "cool", "cool", "cool", 1234);
+	size_t		base_size;
+	size_t		count;
+
+	count = 0;
+	base_size = ft_strlen(base);
+	if (nbr >= base_size)
+	{
+		count += ft_putuint_base(nbr / base_size, base);
+		count += ft_putuint_base(nbr % base_size, base);
+	}
+	else
+	{
+		count += ft_putchar(base[nbr]);
+	}
+	return (count);
 }

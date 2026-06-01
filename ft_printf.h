@@ -6,7 +6,7 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:31:12 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/18 16:12:15 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/06/01 08:50:29 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include <stdbool.h>
+# include <stddef.h>
 
 size_t	char_handler(va_list *args);
 size_t	str_handler(va_list *args);

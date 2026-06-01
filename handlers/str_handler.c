@@ -6,7 +6,7 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:46:02 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/23 15:52:26 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/06/01 08:46:56 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@
 size_t	str_handler(va_list *args)
 {
 	char	*c;
+	size_t	count;
 
 	c = va_arg(*args, char *);
 	if (c == 0x0)
-	{
-		ft_putstr("(null)");
-		return (1);
-	}
-	ft_putstr(c);
-	return (1);
+		count = ft_putstr("(null)");
+	else
+		count = ft_putstr(c);
+	return (count);
 }

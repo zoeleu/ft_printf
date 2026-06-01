@@ -6,25 +6,28 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:52:18 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/18 16:01:35 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/06/01 09:03:14 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putunbr_base(unsigned long nbr, char *base)
+size_t	ft_putunbr_base(unsigned long nbr, char *base)
 {
 	size_t		base_size;
+	size_t		count;
 
+	count = 0;
 	base_size = ft_strlen(base);
 	if (nbr >= base_size)
 	{
-		ft_putunbr_base(nbr / base_size, base);
-		ft_putunbr_base(nbr % base_size, base);
+		count += ft_putunbr_base(nbr / base_size, base);
+		count += ft_putunbr_base(nbr % base_size, base);
 	}
 	else
 	{
-		ft_putchar(base[nbr]);
+		count += ft_putchar(base[nbr]);
 	}
+	return (count);
 }

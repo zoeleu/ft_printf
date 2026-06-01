@@ -1,7 +1,7 @@
 NAME		= libftprintf.a
 
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g3 -c
+CFLAGS		= -Wall -Wextra -Werror -c
 
 INCDIR		= .
 
