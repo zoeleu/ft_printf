@@ -26,10 +26,10 @@ Supported conversions include: `%c`, `%s`, `%p`, `%d`, `%i`, `%u`, `%x`, `%X`, a
 ## Algorithm Explanation
 The core algorithm for `ft_printf` revolves around iteratively parsing the format string:
 1. Traverse the string character by character.
-2. If a regular character is encountered, it is immediately printed to standard output.
+2. If a regular character is encountered, it is immediately printed to standard output, and counted.
 3. If a `%` character is found, it signals a format specifier. The next character(s) are read to determine the type conversion.
-4. Using isolated handler functions (e.g., `char_handler.c`, `str_handler.c`, `hex_handler.c`), the execution is delegated based on the specifier.
+4. Using isolated handler functions (e.g., `char_handler.c`, `str_handler.c`, `hex_handler.c`, ...), the execution is delegated based on the specifier.
 5. Variadic arguments (`va_list`) are accessed inside the handlers to fetch the data corresponding to each specifier.
-6. The total number of printed characters is accumulated and returned, accurately mirroring the behaviour of the original `printf`.
+6. The total number of printed characters is accumulated and returned by the handlers, accurately mirroring the behaviour of the original `printf`.
 
 This modular approach isolates the logic for each format specifier into its own file, satisfying the Norme requirements while making the code maintainable, readable, and easy to extend.
